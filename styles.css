@@ -1,0 +1,325 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  font-family: 'Poppins', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+:root {
+  --bg-color: #080808;
+  --second-bg-color: #101010;
+  --text-color: white;
+  --main-color: #ea580c;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: white;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 20px 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+#menu-icon {
+  font-size: 30px;
+  color: var(--main-color);
+  cursor: pointer;
+  display: none;
+}
+
+.logo {
+  font-size: 3rem;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+}
+
+.logo:hover {
+  color: var(--main-color);
+  transform: scale(1.1);
+}
+
+span {
+  background: linear-gradient(to right, #ff0000, #ff8c00);
+  background-clip: text;
+  color: transparent;
+}
+
+.navbar a {
+  font-size: 1.8rem;
+  color: white;
+  margin-left: 2rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  border-bottom: 4px solid transparent;
+}
+
+.navbar a:hover {
+  color: var(--main-color);
+  border-bottom: 4px solid var(--main-color);
+}
+
+.gradient-btn{
+  font-size: 1.8rem;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 3rem;
+  background: linear-gradient(to right, #ff0000, #ff8c00);
+  color: white;
+  border: none;
+  text-wrap: nowrap;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gradient-btn:hover{
+  transform: scale(1.1);
+  box-shadow: 0 0 4px var(--main-color), 0 0 8px var(--main-color), 0 0 30px var(--main-color);
+  color: brown;
+}
+
+
+main {
+  text-align: center;
+  margin-top: 8rem;
+}
+
+.intro {
+  padding: 0 10rem;
+  text-align: center;
+  scroll-margin-top: 150px;
+}
+
+.intro-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 5rem 10rem;
+  margin: 2rem 0;
+  border: solid 5px var(--main-color);
+  border-radius: 20px;
+  box-shadow: 0 0 4px var(--main-color), 0 0 8px var(--main-color);
+  transition: all 0.3s ease;
+  background: linear-gradient(to top, #6f1d1d, #8e4e01, #5e6000);
+  animation: bouncing 1.3s ease-in-out infinite alternate;
+}
+
+.intro-info h1 {
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.intro-info p {
+  font-size: 1.5rem;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+.profiles {
+  background-color: var(--second-bg-color);
+  padding: 2rem 0;
+  scroll-margin-top: -45px;
+}
+
+.profiles-container {
+  display: flex;
+  min-height: 90vh;
+  width: 100%;
+  padding: 0rem 10rem 0;
+  place-items: center;
+  gap: 3rem;
+  justify-content: center;
+}
+
+.profile {
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 4px var(--main-color), 0 0 8px var(--main-color);
+  border: solid 5px var(--main-color);
+  transition: all 0.3s ease;
+  background-color: rgb(44, 0, 0);
+}
+
+section img {
+  width: 22vw;
+  height: 26vw;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+#profile1:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 4px red, 0 0 10px red, 0 0 20px red;
+  border: solid 5px red;  
+  cursor: pointer;     
+}
+
+#profile2:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 4px orange, 0 0 10px orange, 0 0 20px orange;
+  border: solid 5px orange;
+  cursor: pointer;
+}
+
+#profile2 a {
+  text-decoration: none;
+  color: white;
+}
+
+#profile3:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 4px yellow, 0 0 10px yellow, 0 0 20px yellow;
+  border: solid 5px yellow;
+  cursor: pointer;
+}
+
+.social-icons a{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  padding: 1rem;
+  background: transparent;
+  border: 2px solid var(--main-color);
+  border-radius: 50%;
+  color: var(--main-color);
+  margin: 3rem 0.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.social-icons a:hover{
+  background: var(--main-color);
+  color: var(--bg-color);
+  transform: scale(1.2) translateY(-5px);
+  box-shadow: 0 0 4px var(--main-color), 0 0 8px var(--main-color), 0 0 30px var(--main-color);
+}
+
+.contact {
+  padding: 2rem 0;
+  scroll-margin-top: 40px;
+}
+
+.contact h1 {
+  margin-top: 3rem;
+  font-size: 3rem;
+}
+
+.heading {
+  font-weight: 700;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.contact form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  text-align: center;
+}
+
+.contact form .input-box input, .contact form textarea {
+  width: 100%;
+  padding: 2.5rem;
+  font-size: 1.8rem;
+  color: white;
+  background-color: var(--bg-color);
+  border-radius: 2rem;
+  border: 2px solid var(--main-color);
+  margin: 1.5rem 0;
+  resize: none;
+  box-shadow: 0 0 4px var(--main-color), 0 0 8px var(--main-color);
+  transition: all 0.3s ease;
+}
+
+.btn{
+  font-size: 1.8rem;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 3rem;
+  background: linear-gradient(to right, #ff0000, #ff8c00);
+  color: white;
+  border: none;
+  text-wrap: nowrap;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn:hover{
+  transform: scale(1.1);
+  box-shadow: 0 0 4px var(--main-color), 0 0 8px var(--main-color), 0 0 30px var(--main-color);
+  color: brown;
+}
+
+
+.contact form .input-box input:hover, .contact form textarea:hover {
+  border: 2px solid var(--main-color);
+  box-shadow: 0 0 4px var(--main-color), 0 0 8px var(--main-color), 0 0 30px var(--main-color);
+}
+
+.contact form .input-box input::placeholder, .contact form textarea::placeholder {
+  color: white;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 1.5rem;
+  background-color: var(--second-bg-color);
+  color: gray;
+}
+
+.footer ul li {
+  display: inline-flex;
+  margin: 0 1rem;
+}
+
+.footer ul li a {
+  color: white;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.footer ul li a:hover {
+  color: var(--main-color);
+  transform: scale(1.1);
+  border-bottom: 3px solid var(--main-color);
+}
+
+.footer .copyright {
+  margin-top: 1rem;
+  color: gray;
+}
+
+
+@keyframes bouncing {
+  0%, 100% {
+    transform: translateY(0);
+    box-shadow: 0 0 4px var(--main-color), 0 0 8px var(--main-color);
+  }
+  50% {
+    transform: translateY(-15px);
+    box-shadow: 0 0 8px var(--main-color), 0 0 16px var(--main-color), 0 0 40px var(--main-color);
+  }
+  
+}
