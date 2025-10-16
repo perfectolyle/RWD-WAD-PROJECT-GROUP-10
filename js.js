@@ -1,146 +1,60 @@
-// menu toggle (hamburger)
-const menuIcon = document.querySelector('#menu-icon');
-const navbar = document.querySelector('.navbar');
+let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
 
-menuIcon.addEventListener('click', () => {
-  menuIcon.classList.toggle('bx-x');
-  navbar.classList.toggle('active');
-});
-
-// profile data store (easy to extend)
-const profiles = {
-  perfecto: {
-    key: 'perfecto',
-    name: 'Perfecto Gardoce',
-    role: 'Web Developer',
-    bio:
-      "I'm a web developer with a knack for creating efficient and scalable web applications. My expertise lies in HTML, CSS, and JavaScript. I specialize in converting design into responsive and accessible interfaces.",
-    image: 'https://i.pinimg.com/736x/25/4c/7d/254c7d3e4737995ddd5292a3450f70ca.jpg',
-    theme: {
-      '--main-color': '#ea580c',
-      '--bg-color': '#080808',
-      '--second-bg-color': '#101010'
-    },
-    ctaHref: 'profile2.html',
-    ctaText: 'View Full Profile'
-  },
-  winston: {
-    key: 'winston',
-    name: 'Winston',
-    role: 'Web Designer',
-    bio:
-      "Winston focuses on visual design, layout, and user-centered interfaces. He brings polished mockups and layout systems that improve clarity and flow across screen sizes.",
-    image: 'https://i.pinimg.com/736x/00/14/08/00140847deddb10bbbc7711b0ecb0bc5.jpg',
-    theme: {
-      '--main-color': '#1e90ff',     // blue
-      '--bg-color': '#071028',      // deep blue-black
-      '--second-bg-color': '#0b2540'
-    },
-    ctaHref: '#contact',
-    ctaText: 'Contact Winston'
-  },
-  april: {
-    key: 'april',
-    name: 'April',
-    role: 'UI / UX Designer',
-    bio:
-      "April is a UI/UX designer who focuses on user journeys, wireframes, and accessible interactions. April designs friendly interfaces driven by research and empathy.",
-    image: 'https://i.pinimg.com/1200x/a0/99/93/a0999341add425c3afbfd9c82312fe52.jpg',
-    theme: {
-      '--main-color': '#ff66b2',   // pink
-      '--bg-color': '#100815',
-      '--second-bg-color': '#2a0f1a'
-    },
-    ctaHref: '#contact',
-    ctaText: 'Contact April'
-  }
+menuIcon.onclick = () => {
+    menuIcon.classList.toggle('bx-x');
+    navbar.classList.toggle('active');
 };
 
-// DOM refs
-const cardElements = document.querySelectorAll('.profile-card');
-const displayImage = document.getElementById('display-image');
-const displayNameSpan = document.getElementById('display-name-span');
-const displayRole = document.getElementById('display-role');
-const displayBio = document.getElementById('display-bio');
-const displayCta = document.getElementById('display-cta');
-const root = document.documentElement;
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.navbar');
 
-// helper to apply theme (CSS variables)
-function applyTheme(themeObj) {
-  Object.keys(themeObj).forEach((varName) => {
-    root.style.setProperty(varName, themeObj[varName]);
-  });
-}
-
-// helper to update content
-function updateDisplay(profile) {
-  // smooth crossfade
-  const wrapper = document.querySelector('.profile-display');
-  wrapper.style.opacity = 0;
-  setTimeout(() => {
-    displayImage.src = profile.image;
-    displayImage.alt = `${profile.name} portrait`;
-    displayNameSpan.textContent = profile.name;
-    displayRole.innerHTML = profile.role.replace(/( |$)/, ' <span></span>'); // keep span usage
-    displayBio.textContent = profile.bio;
-    displayCta.href = profile.ctaHref;
-    displayCta.textContent = profile.ctaText || 'View Profile';
-    applyTheme(profile.theme);
-    wrapper.style.opacity = 1;
-  }, 180);
-}
-
-// remove .selected from cards
-function clearSelected() {
-  cardElements.forEach((el) => {
-    el.classList.remove('selected');
-    el.setAttribute('aria-pressed', 'false');
-  });
-}
-
-// set selected card
-function selectCard(cardEl) {
-  clearSelected();
-  cardEl.classList.add('selected');
-  cardEl.setAttribute('aria-pressed', 'true');
-}
-
-// card click handling
-cardElements.forEach((card) => {
-  const key = card.dataset.key;
-  // if link (Perfecto) is anchor, let browser navigate
-  if (card.tagName.toLowerCase() === 'a') {
-    // make it visually selectable but don't override navigation
-    card.addEventListener('click', () => {
-      clearSelected();
-      card.classList.add('selected');
-    });
-    return;
-  }
-
-  card.addEventListener('click', (e) => {
-    const k = card.dataset.key;
-    const profile = profiles[k];
-    if (!profile) return;
-    updateDisplay(profile);
-    selectCard(card);
-    // for accessibility: move focus to the main content region
-    document.getElementById('intro').focus({ preventScroll: true });
-  });
-
-  // keyboard support
-  card.addEventListener('keydown', (ev) => {
-    if (ev.key === 'Enter' || ev.key === ' ') {
-      ev.preventDefault();
-      card.click();
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(link => link.classList.remove('activeLine'));
+      const activeLink = document.querySelector(`a[href="#${entry.target.id}"]`);
+      activeLink.classList.add('activeLine');
+    }
+    else {
+      const activeLink = document.querySelector(`a[href="#${entry.target.id}"]`);
+      activeLink.classList.remove('activeLine');
     }
   });
-});
+}, { threshold: 0.2 }); 
+sections.forEach(section => observer.observe(section));
 
-// initial default: mark Perfecto selected visually (but it's a link)
-document.querySelectorAll('.profile-card').forEach((el) => el.classList.remove('selected'));
-const initial = document.querySelector('.profile-card[data-key="perfecto"]');
-if (initial) initial.classList.add('selected');
+const bodyId = document.body.id; 
+console.log(bodyId);
 
-// ensure default theme is applied
-applyTheme(profiles.perfecto.theme);
+const homeP = document.getElementById('home-p');
+const aboutP = document.getElementById('about-p');
+function updateHomePText() {
+    if (window.innerWidth <= 830 && bodyId == 'perfecto') {
+        homeP.innerHTML = 'A web developer builds and maintains websites using coding languages like HTML, CSS, and JavaScript.';
+        aboutP.innerHTML = 'Hello! I\'m Perfecto S. Gardoce III, a passionate web developer with a knack for creating efficient and scalable web applications.'
+    } else if(window.innerWidth > 830 && bodyId == 'perfecto') {
+        homeP.innerHTML = 'A web developer builds and maintains websites using coding languages like HTML, CSS, and JavaScript. They make sure a website works properly on different devices and browsers. They focus on the technical side, such as functions, speed, and security. Some web developers work on the front-end (what users see) while others handle the back-end (server and database). Their goal is to make a website that runs smoothly and meets user needs.'
+        aboutP.innerHTML = 'Hello! I\'m Perfecto S. Gardoce III, a passionate web developer with a knack for creating efficient and scalable web applications. My expertise lies in HTML, CSS, and JavaScript, and I specialize in crafting visually stunning and user-friendly interfaces. With a strong foundation in front-end development, I excel in translating design concepts into functional, responsive websites.'
+    }
+
+    if (window.innerWidth <= 830 && bodyId == 'winston') {
+        homeP.innerHTML = 'A web designer focuses on how a website looks and feels. They choose colors, fonts, images, and layouts to make the site attractive.';
+        aboutP.innerHTML = 'Hi, I’m Winston. I\'m currently a 2nd-year student taking up Bachelor of Science in Information Systems at La Verdad Christian College. I was born and raised in Manila, and I am currently living in Apalit, Pampanga to continue my studies.'
+    } else if(window.innerWidth > 830 && bodyId == 'winston') {
+        homeP.innerHTML = 'A web designer focuses on how a website looks and feels. They choose colors, fonts, images, and layouts to make the site attractive. They often use tools like Figma, Photoshop, or Canva for design mockups. Their job is to make sure the design matches the brand and looks appealing to users. They work closely with web developers to turn the design into a real website.'
+        aboutP.innerHTML = 'Hi, I’m Winston. I\'m currently a 2nd-year student taking up Bachelor of Science in Information Systems at La Verdad Christian College. I was born and raised in Manila, and I am currently living in Apalit, Pampanga to continue my studies. I am interested in technology and software development, and I enjoy learning new things that can help improve my knowledge and skills. I am also a typical person who likes to stay in a quiet and peaceful place, experience and learn new things, and go somewhere that no one has been before.'
+    }
+    
+    if (window.innerWidth <= 830 && bodyId == 'april') {
+        homeP.innerHTML = 'A UI/UX designer focuses on user interface (UI) and user experience (UX). They make sure a website or app is easy to use, clear, and enjoyable.';
+        aboutP.innerHTML = 'I\'m April Joy M. Gud-ay, from the Province of Kalinga, a place rich in tradition and known for its beautiful tourist spots.'
+        
+    } else if(window.innerWidth > 830 && bodyId == 'april') {
+        homeP.innerHTML = 'A UI/UX designer focuses on user interface (UI) and user experience (UX). They make sure a website or app is easy to use, clear, and enjoyable. UI deals with design elements like buttons, icons, and layout. UX deals with how users move through and feel while using the site. Their goal is to create a smooth, simple, and satisfying experience for users.'
+        aboutP.innerHTML = 'I\'m April Joy M. Gud-ay, from the Province of Kalinga, a place rich in tradition and known for its beautiful tourist spots. I\'m currently pursuing an Associate in Computer Technology at La Verdad Christian College, where I\'m learning how to build websites, write code, and explain ideas in simple and meaningful ways.'
+    }
+}
+window.addEventListener('resize', updateHomePText);
+updateHomePText();
+

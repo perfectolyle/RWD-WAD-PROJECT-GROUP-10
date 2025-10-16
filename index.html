@@ -11,6 +11,14 @@
         <link href="https://fonts.googleapis.com/css2?family=Manufacturing+Consent&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
     <body>
+        <div class="frontground">
+            <div class="bar" style="--i:6;"></div>
+            <div class="bar" style="--i:5;"></div>
+            <div class="bar" style="--i:4;"></div>
+            <div class="bar" style="--i:3;"></div>
+            <div class="bar" style="--i:2;"></div>
+            <div class="bar" style="--i:1;"></div>
+        </div>
         <header >
             <a href="index.html" target="_self" class="logo">Group <span>10</span></a>
             <i class='bx bx-menu' id="menu-icon"></i>
@@ -19,10 +27,17 @@
                 <a href="#profiles">Profiles</a>
                <a href="#contact">Contact</a>               
             </nav>
-            <button class="gradient-btn">Contact Us</button>
+            <button class="gradient-btn"><a href="#contact">Contact Us</a></button>
         </header>
         <main id="home">
             <section id="intro" class="intro">
+                <div class="blobs">
+                    <div class="blob"></div>
+                    <div class="blob"></div>
+                    <div class="blob"></div>
+                    <div class="blob"></div>
+                    <div class="blob"></div>
+                </div>
                 <div class="intro-info" id="intro-info">
                     <h1>Welcome to <span>Group 10's</span> Web Application Development 1 and Responsive Web Design Project</h1>
                     <p>Our midterm project for Web Application Development 1 and Responsive Web Design is a team-based task where we work together to design and build a simple but functional web application using HTML, CSS, and minimal JavaScript. The goal of this project is to apply what we have learned in front-end development, practice collaboration, and create a polished final product that follows proper coding structure, good design, and user-friendly features. This project also helps us improve teamwork, as each member has a role in planning, designing, coding, and testing to make sure the website is complete and well-presented.</p>
@@ -31,19 +46,24 @@
             </section>
             
             <section id="profiles" class="profiles">
-                <h1 class="heading">Meet Our <span>Group</span></h1>
+                <h1 class="heading autoShow">Meet Our <span>Group</span></h1>
                 <div class="profiles-container">
+                    <div class="autoShow">
                     <div class="profile" id="profile1">
-                        <img src="https://i.pinimg.com/736x/00/14/08/00140847deddb10bbbc7711b0ecb0bc5.jpg" alt="Winston">
+                        <a href="profile1.html">
+                        <img src="../images/winston.png" alt="Winston">
                         <center>
                             <h1>Hi, I'm <span>Winston</span></h1>
                             <h2>Web <span>Designer</span></h2>
                             <p>I'm a web designer with a passion for creating stunning and user-friendly websites.</p>
                         </center>
+                        </a>
                     </div>
+                    </div>
+                    <div class="autoShow">
                     <div class="profile" id="profile2"> 
                         <a href="profile2.html">
-                        <img src="https://i.pinimg.com/736x/25/4c/7d/254c7d3e4737995ddd5292a3450f70ca.jpg" alt="Perfecto">
+                        <img src="../images/perfecto1.jpeg" alt="Perfecto">
                         <center>
                             <h1>Hi, I'm <span>Perfecto</span></h1>
                             <h2>Web <span>Developer</span></h2>
@@ -51,32 +71,37 @@
                         </center>
                         </a>
                     </div>
+                    </div>
+                    <div class="autoShow">
                     <div class="profile" id="profile3">
-                        <img src="https://i.pinimg.com/1200x/a0/99/93/a0999341add425c3afbfd9c82312fe52.jpg" alt="April">
+                        <a href="profile3.html">
+                        <img src="../images/april.jpg" alt="April">
                         <center>
                             <h1>Hello, I'm <span>April</span></h1>
                             <h2>UI/UX <span>Designer</span></h2>
                             <p>I'm a UI/UX designer dedicated to crafting intuitive and engaging user experiences.</p>  
                         </center>
+                        </a>
+                    </div>
                     </div>
                 </div>
             </section>
             <section class="contact" id="contact">
-                <h1 class="heading">Contact <span>Us</span></h1>
+                <h1 class="heading autoShow">Contact <span>Us</span></h1>
                 <form action="#">
                     <div class="input-group">
-                        <div class="input-box">
+                        <div class="input-box autoShow">
                             <input type="text" placeholder="Full Name" required>
                             <input type="email" placeholder="Email" required>
                         </div>
-                        <div class="input-box">
+                        <div class="input-box autoShow">
                             <input type="tel" id="phone" name="phone" placeholder="09XX-XXX-XXXX" 
                             pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}" 
                             title="Phone number must be in the format: 09XX-XXX-XXXX" required>
                             <input type="text" placeholder="Subject" required>
                         </div>
                     </div>
-                    <div class="input-group-2">
+                    <div class="input-group-2 autoShow">
                         <textarea placeholder="Your Message" required cols="30" rows="10"></textarea>
                         <input type="submit" value="Send Message" class="btn">
                     </div>
@@ -92,7 +117,7 @@
             </div>
             <ul class="links">
                 <li><a href="#intro">Home</a></li>
-                <li><a href="#profiles">About</a></li>
+                <li><a href="#profiles">Profiles</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <p class="copyright">&copy; 2025 Group 10. All rights reserved.</p>

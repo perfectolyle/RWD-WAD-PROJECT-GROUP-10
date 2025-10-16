@@ -12,7 +12,7 @@
   --bg-color: #080808;
   --second-bg-color: #101010;
   --text-color: white;
-  --main-color: #ea580c;
+  --main-color: #ea0c74;
 }
 
 html {
@@ -22,7 +22,7 @@ html {
 .autoShow{
   animation: text-appear both;
   animation-timeline: view();
-  animation-range: entry 30% cover 30%;
+  animation-range: entry 40% cover 40%;
 }
 
 
@@ -35,7 +35,7 @@ body {
 .blob{
   width: 500px;
   aspect-ratio: 1/1;
-  background: linear-gradient(rgb(255, 62, 62), rgb(0, 64, 255), rgb(117, 0, 121));
+  background: linear-gradient(rgb(68, 0, 71), rgb(48, 5, 167), rgb(117, 0, 121));
   border-radius: 30% 70% 70% 30% / 30% 40% 70% 70%;
   filter: blur(70px);
   animation: changeShape 6s linear infinite, rotateShape 18s linear infinite, moveShape 30s linear infinite;
@@ -80,7 +80,7 @@ header {
 }
 
 span {
-  background: linear-gradient(to right, #ff0000, #ff8c00);
+  background: linear-gradient(to right, #ff0008, #a600ff);
   background-clip: text;
   color: transparent;
 }
@@ -104,7 +104,7 @@ span {
   font-weight: 700;
   padding: 10px 20px;
   border-radius: 3rem;
-  background: linear-gradient(to right, #ff0000, #ff8c00);
+  background: linear-gradient(to right, #ff0008, #a600ff);
   color: white;
   border: none;
   text-wrap: nowrap;
@@ -161,11 +161,12 @@ section {
 
 .home-img img{
     width: 32vw;
+    aspect-ratio: 1 / 1;
+    display: block;
     border-radius: 50%;
+    object-fit: cover; 
     box-shadow: 0 0 20px var(--main-color), 0 0 25px var(--main-color);
     transition: all 0.4s ease-in-out;
-    object-fit: cover;
-    aspect-ratio: 1 / 1;
 }
 
 .home-img img:hover{
@@ -238,7 +239,8 @@ section {
     box-shadow: 0 0 20px var(--main-color), 0 0 25px var(--main-color);
     transition: all 0.4s ease-in-out;
     object-fit: cover;
-    aspect-ratio: 1 / 1;
+        aspect-ratio: 1 / 1;
+
 }
 
 .about-img img:hover{
@@ -390,7 +392,9 @@ section {
   border-radius: 2rem;
   object-fit: cover;
 }
-
+#achievements-card1 img{
+    max-height: 250px;
+}
 .achievements-card h3 {
   font-size: 2rem;
 }
@@ -561,6 +565,7 @@ section {
     text-align: justify;
     margin: 0 0;
   }
+  
   .about-img img{
     width:32vw;
   }
@@ -671,7 +676,7 @@ section {
    .achievements-card{
     display: inline-block;
     width: 500px;
-    animation: slide 20s linear infinite;
+    animation: slide 2s linear infinite;
     }
     .achievements-card p{
       margin: 1.5rem 0;
@@ -780,7 +785,7 @@ section {
 
 @keyframes slide {
   0%, 100% {
-    transform: translateX(-240%);
+    transform: translateX(-20%);
   }
   50% {
     transform: translateX(0);
@@ -808,7 +813,7 @@ section {
 .frontground .bar {
   width: 100%;
   border: 2px solid black;
-  background: linear-gradient(to right, #ff0000, #ff8c00);
+  background: linear-gradient(to right, #ff0008, #a600ff);
   animation: fade-in 1s ease-in-out forwards;
   animation-delay: calc(0.1s * var(--i));
 }
