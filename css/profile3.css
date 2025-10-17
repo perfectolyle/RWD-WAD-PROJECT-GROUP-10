@@ -691,7 +691,7 @@ section {
   .achievements h2{
     margin: 0;
     padding: 0;
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
    .achievements-box{
     display: inline-flex;
@@ -835,7 +835,7 @@ section {
 }
 @keyframes slide1 {
   0%, 100% {
-    transform: translateX(-20%);
+    transform: translateX(-30%);
   }
   50% {
     transform: translateX(10%);
