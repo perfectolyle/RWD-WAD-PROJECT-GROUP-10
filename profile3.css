@@ -661,7 +661,7 @@ section {
   .skills-box{
     display: inline-block;
     width: 500px;
-    animation: slide 20s linear infinite;
+    animation: slide1 40s linear infinite;
   }
   .skills-container:hover .skills-box{
     animation-play-state:paused;
@@ -786,6 +786,14 @@ section {
 @keyframes slide {
   0%, 100% {
     transform: translateX(-20%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+}
+@keyframes slide1 {
+  0%, 100% {
+    transform: translateX(-480%);
   }
   50% {
     transform: translateX(0);

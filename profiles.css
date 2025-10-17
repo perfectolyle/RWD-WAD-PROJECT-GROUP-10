@@ -656,7 +656,7 @@ section {
   .skills-box{
     display: inline-block;
     width: 500px;
-    animation: slide 20s linear infinite;
+    animation: slide 60s linear infinite;
   }
   .skills-container:hover .skills-box{
     animation-play-state:paused;
@@ -671,7 +671,7 @@ section {
    .achievements-card{
     display: inline-block;
     width: 500px;
-    animation: slide 20s linear infinite;
+    animation: slide1 20s linear infinite;
     }
     .achievements-card p{
       margin: 1.5rem 0;
@@ -780,12 +780,21 @@ section {
 
 @keyframes slide {
   0%, 100% {
+    transform: translateX(-700%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+}
+@keyframes slide1 {
+  0%, 100% {
     transform: translateX(-240%);
   }
   50% {
     transform: translateX(0);
   }
 }
+
 
 @keyframes typing {
   from{
