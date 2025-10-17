@@ -260,13 +260,12 @@ section {
 }
 
 ::-webkit-scrollbar {
-    width: 20px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
     background: var(--main-color);
     transition: all 0.5s ease-in-out;
-
 }
 
 ::-webkit-scrollbar-thumb:hover {
