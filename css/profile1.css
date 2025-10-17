@@ -15,6 +15,7 @@
   --main-color: #430cea;
 }
 
+
 html {
   overflow-x: hidden;
 }
@@ -623,9 +624,12 @@ section {
   .contact form{
     margin: 0 2rem;
   }
+  section{
+  overflow-x: hidden;
+  }
   .home {
     flex-direction: column-reverse;
-    margin: 4rem;
+    margin: 4rem 0;
     gap: 1rem;
     scroll-margin-top: 150px;
   }

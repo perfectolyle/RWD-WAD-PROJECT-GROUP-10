@@ -620,9 +620,12 @@ section {
   .contact form{
     margin: 0 2rem;
   }
+  section{
+  overflow-x: hidden;
+  }
   .home {
     flex-direction: column-reverse;
-    margin: 4rem;
+    margin: 4rem 0;
     gap: 1rem;
     scroll-margin-top: 150px;
   }
@@ -634,9 +637,9 @@ section {
     font-size: 2rem;
   }
   .btn{
-    padding: 1rem 1.5rem;
+    padding: 1rem;
     font-size: 1rem;
-    width: 220px;
+    width: 180px;
   }
   .home-content {
     align-items: center;
