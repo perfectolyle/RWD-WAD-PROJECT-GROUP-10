@@ -22,7 +22,7 @@ html {
 .autoShow{
   animation: text-appear both;
   animation-timeline: view();
-  animation-range: entry 40% cover 40%;
+  animation-range: entry 20% cover 30%;
 }
 
 
@@ -33,7 +33,7 @@ body {
 
 
 .blob{
-  width: 500px;
+  width: 300px;
   aspect-ratio: 1/1;
   background: linear-gradient(rgb(255, 62, 62), rgb(255, 234, 0), rgb(117, 0, 121));
   border-radius: 30% 70% 70% 30% / 30% 40% 70% 70%;
@@ -86,7 +86,7 @@ span {
 }
 
 .navbar a {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   color: white;
   margin-left: 2rem;
   font-weight: 700;
@@ -132,6 +132,7 @@ section {
   justify-content: center;
   align-items: center;
   gap: 5rem;
+  padding: 8rem 10%;
 }
 
 .home-content {
@@ -149,14 +150,15 @@ section {
 }
 
 .home-content h2 {
-  width: 19ch;
+  width: 16ch;
+  padding: 0;
   margin: 1rem 0;
   font-size: 4rem;
   font-weight: 700;
   line-height: 1.3;
   overflow: hidden;
   text-wrap: nowrap;
-  animation: typing 2s steps(19) infinite alternate;
+  animation: typing 2s steps(30) infinite alternate;
 }
 
 .home-img img{
@@ -226,7 +228,7 @@ section {
     justify-content: center;
     align-self: center;
     gap: 5rem;
-    scroll-margin-top: 40px;
+    scroll-margin-top: -10px;
     background-color: var(--second-bg-color);
     background-color: rgba(0, 0, 0, 0.555);
   backdrop-filter: blur(10px);
@@ -256,7 +258,7 @@ section {
 }
 
 .about-content .btn{
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 
 ::-webkit-scrollbar {
@@ -279,7 +281,7 @@ section {
 
 .heading {
     text-align: center;
-    font-size: 7rem;
+    font-size: 4rem;
     margin: 1rem 0;
     font-weight: 700;
 }
@@ -295,7 +297,7 @@ section {
 
 .skills-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2.5rem;
 }
 
@@ -325,13 +327,13 @@ section {
   text-align: center;
   justify-content: center;
   align-items: center;
-  padding: 5rem;
+  padding: 3rem;
 }
 
 .skill-info h3 {
-  font-size: 4rem;
+  font-size: 2rem;
   font-weight: 800;
-  margin-bottom:2rem 0;
+  margin-bottom: 1rem;
 }
 
 .skill-info p {
@@ -340,24 +342,24 @@ section {
 }
 
 .skill-info i{
-  font-size: 8rem;
+  font-size: 6rem;
 }
 
 .achievements {
   background-color: var(--second-bg-color);
-  scroll-margin-top: -100px;
+  scroll-margin-top: -80px;
   background-color: rgba(0, 0, 0, 0.555);
   backdrop-filter: blur(10px);
 }
 
 .achievements h2 {
-  font-size: 8rem;
+  font-size: 3rem;
   text-align: center;
 }
 
 .achievements-box {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   place-items: center;
   gap: 3rem;
   row-gap: 5rem;
@@ -365,6 +367,7 @@ section {
 
 .achievements-card {
   display: flex;
+  height: 600px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -373,7 +376,7 @@ section {
   border: 2px solid var(--main-color);
   border-radius: 3rem;
   gap: 2rem;
-  padding: 5rem 2rem;
+  padding: 3.5rem 2rem;
   overflow: hidden;
   cursor: pointer;
   transition: all 0.4s ease-in-out;
@@ -386,19 +389,19 @@ section {
 }
 
 .achievements-card img {
-  max-width: 300px;
+  max-width: 200px;
   border-radius: 2rem;
   object-fit: cover;
 }
 #achievements-card1 img{
-    max-height: 250px;
+    max-height: 200px;
 }
 .achievements-card h3 {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .achievements-card p {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .achievements-card a {  
@@ -412,31 +415,31 @@ section {
 }
 
 .contact {
-  padding: 1.5rem 0;
-  scroll-margin-top: 30px;
+  padding: 5rem 0;
+  scroll-margin-top: 20px;
 }
 
 .contact h1 {
-  font-size: 8rem;
+  font-size: 3rem;
 }
 
 .contact form {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;
   text-align: center;
 }
 
 .contact form .input-box input, .contact form textarea {
   width: 100%;
-  padding: 2rem;
-  font-size: 1.8rem;
+  padding: 1.5rem;
+  font-size: 1.5rem;
   color: white;
   background-color: var(--bg-color);
   border-radius: 2rem;
   border: 2px solid var(--main-color);
-  margin: 1.5rem 0;
+  margin: 1rem 0;
   resize: none;
   box-shadow: 0 0 4px var(--main-color), 0 0 8px var(--main-color);
   transition: all 0.3s ease;
@@ -526,45 +529,60 @@ section {
   min-height: 90vh;
   }
 
+  .btn{
+    font-size: .8rem;
+    padding: 1rem 2rem;
+  }
+
  
   .home {
     flex-direction: column-reverse;
     margin: 2.5rem 0;
     gap: 1rem;
     scroll-margin-top: 150px;
+    padding: 6rem 10%;
   }
   .home-content {
     align-items: center;
     text-align: center;
   }
   .home-content h1 {
-    font-size: 4rem;
+    font-size: 3rem;
+    margin: 0;
   }
   .home-content h2{
-    font-size: 2.5rem;
+    font-size: 2rem;
+    margin: 0;
+  }
+  .home-content p{
+    font-size: .8rem;
   }
   .home-img img   {
-    width: 28vw;
+    width: 20vw;
     display: flex;
     justify-content: center;
   }
   .social-icons a{
     padding: .5rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .about {
     flex-direction: column-reverse;
     align-items: center;
     gap: 1rem;
-    scroll-margin-top: 15px;
+    scroll-margin-top: 65px;
   }
   .about-content h2{
     text-align: justify;
     margin: 0 0;
+    font-size: 4rem;
+  }
+  .about-content p{
+    font-size: 1rem;
   }
   .about-img img{
-    width:32vw;
+    width:20vw;
   }
 
   .achievements h2 {
@@ -576,7 +594,7 @@ section {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    scroll-margin-top: -5px;
+    scroll-margin-top: 15px;
   }
 
   .achievements {
@@ -585,7 +603,7 @@ section {
 
 
   .contact {
-    scroll-margin-top: 90px;
+    scroll-margin-top: 30px;
   }
   .contact form {
     gap: 2rem;
@@ -593,7 +611,8 @@ section {
   }
 
   .contact h1{
-    font-size: 4rem;
+    font-size: 3rem;
+    margin: 0;
   }
   #menu-icon{
     font-size: 3rem;
@@ -611,16 +630,16 @@ section {
     scroll-margin-top: 150px;
   }
   .home h1{
-    font-size: 4rem;
+    font-size: 2.5rem;
   }
   .social-icons a{
     padding: .5rem;
     font-size: 2rem;
   }
   .btn{
-    padding: 1rem 2rem;
+    padding: 1rem;
     font-size: 1rem;
-    width: 220px;
+    width: 180px;
   }
   .home-content {
     align-items: center;
@@ -636,34 +655,44 @@ section {
   }
 
   .about{
-    scroll-margin-top: 50px;
+    scroll-margin-top: 30px;
   }
   .about h2{
-    font-size: 4rem;
+    font-size: 3rem;
   }
   .about-img img{
     width: 52vw;
   }
   .about-img {
-    padding: 4rem 0;
+    padding: 1rem 0;
   }
 
+
+  .skills h2{
+    margin: 0;
+    padding: 0;
+  }
   .skills-container{
     display: inline-flex;
     gap: 3rem;
     margin: 0 1rem;
-    padding: 3rem;
+    padding: 2rem;
   }
-
   .skills-box{
     display: inline-block;
-    width: 500px;
+    width: 450px;
     animation: slide 20s linear infinite;
   }
   .skills-container:hover .skills-box{
     animation-play-state:paused;
   }
 
+
+  .achievements h2{
+    margin: 0;
+    padding: 0;
+    font-size: 3rem;
+  }
    .achievements-box{
     display: inline-flex;
     gap: 3rem;
@@ -672,6 +701,7 @@ section {
    }
    .achievements-card{
     display: inline-block;
+    height: 500px;
     width: 500px;
     animation: slide 20s linear infinite;
     }
@@ -682,34 +712,49 @@ section {
       animation-play-state:paused;
     }
   
-    .contact{
-      font-size: 1rem;
-    }
-  
-  .footer ul li {
-    display: inline-flex;
-    margin: 0 .3rem;
-    }
+    .contact {
+    padding: 2rem 2rem 6rem;
+    scroll-margin-top: 70px;
+  }
 
-    .contact{
-      padding: 3rem 0;
-      scroll-margin-top: 60px;
-    }
-    .contact form{
-      flex-direction: column;
-      gap: 1rem;
-      margin: 0 2rem;
-    }
-    .contact form .input-box input, .contact form textarea{
-      padding: 1.3rem 4rem;
-      font-size: 1rem;
-      margin: .5rem 0;
-    }
-    .autoShow{
-      animation: text-appear both;
-      animation-timeline: view();
-      animation-range: entry 20% cover 20%;
-    }
+  .contact form {
+    flex-direction: column;
+    gap: .6rem;
+    margin: 0 2rem;
+  }
+
+  .contact form .input-box input,
+  .contact form textarea {
+    padding: .8rem 4rem;
+    font-size: .8rem;
+    margin: 0.3rem 0;
+  }
+
+  .input-group-2 .btn{
+    font-size: .8rem;
+  }
+
+  .social-icons a{
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    margin: 0.5rem .3rem;
+  }
+  .footer ul li {
+    margin: 0 0.3rem;
+  }
+  .footer a, .footer p{
+    font-size: 1rem;
+    margin: 0;
+  }
+  .footer a{
+    font-size: .8rem;
+  }
+
+  .autoShow {
+    animation: text-appear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 20%;
+  }
   }
   
  

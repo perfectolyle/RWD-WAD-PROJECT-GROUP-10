@@ -27,7 +27,8 @@
             <nav class="navbar">                
                 <a href="#intro" >Home</a>
                 <a href="#profiles">Profiles</a>
-               <a href="#contact">Contact</a>               
+               <a href="#contact">Contact</a>   
+               <a href="#messages">Messages</a>            
             </nav>
             <button class="gradient-btn"><a href="#contact">Contact Us</a></button>
         </header>
@@ -90,24 +91,30 @@
             </section>
             <section class="contact" id="contact">
                 <h1 class="heading autoShow">Contact <span>Us</span></h1>
-                <form action="#">
-                    <div class="input-group">
-                        <div class="input-box autoShow">
-                            <input type="text" placeholder="Full Name" required>
-                            <input type="email" placeholder="Email" required>
-                        </div>
-                        <div class="input-box autoShow">
-                            <input type="tel" id="phone" name="phone" placeholder="09XX-XXX-XXXX" 
-                            pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}" 
-                            title="Phone number must be in the format: 09XX-XXX-XXXX" required>
-                            <input type="text" placeholder="Subject" required>
-                        </div>
+                <form id="contactForm">
+                <div class="input-group">
+                    <div class="input-box autoShow">
+                    <input type="text" id="name" placeholder="Full Name" required>
+                    <input type="email" id="email" placeholder="Email" required>
                     </div>
-                    <div class="input-group-2 autoShow">
-                        <textarea placeholder="Your Message" required cols="30" rows="10"></textarea>
-                        <input type="submit" value="Send Message" class="btn">
+                    <div class="input-box autoShow">
+                    <input type="tel" id="phone" placeholder="09XX-XXX-XXXX" 
+                    pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}" 
+                    title="Phone number must be in the format: 09XX-XXX-XXXX" required>
+                    <input type="text" id="subject" placeholder="Subject" required>
                     </div>
+                </div>
+                <div class="input-group-2 autoShow">
+                    <textarea id="message" placeholder="Your Message" required cols="30" rows="10"></textarea>
+                    <input type="submit" value="Send Message" class="btn">
+                </div>
                 </form>
+            </section>
+            <section class="messages" id="messages">
+                <h2 class="heading">Messages</h2>
+                <div id="messageList" class="message-list">
+                    <p>No messages yet.</p>
+                </div>
             </section>
         </main>
         <footer class="footer">

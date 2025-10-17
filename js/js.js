@@ -58,3 +58,29 @@ function updateHomePText() {
 window.addEventListener('resize', updateHomePText);
 updateHomePText();
 
+const form = document.getElementById('contactForm');
+const messageList = document.getElementById('messageList');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+const name = document.getElementById('name').value.trim();
+const email = document.getElementById('email').value.trim();
+const subject = document.getElementById('subject').value.trim();
+const message = document.getElementById('message').value.trim();
+
+const messageCard = document.createElement('div');
+messageCard.classList.add('message-card');
+messageCard.innerHTML = `
+  <h3>${subject}</h3>
+  <p><strong>From:</strong> ${name} (${email})</p>
+  <p>${message}</p>
+`;
+
+if (messageList.children[0] && messageList.children[0].tagName === "P") {
+  messageList.innerHTML = ""; 
+}
+messageList.appendChild(messageCard);
+
+form.reset();
+});
