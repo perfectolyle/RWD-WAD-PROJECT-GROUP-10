@@ -628,7 +628,7 @@ section img {
   z-index: 1000;
   overflow: hidden;
   animation: remove 1s ease-in-out forwards;
-  animation-delay: 1s; /* how long before it hides */
+  animation-delay: 1s;
 }
 
 #bar1{
